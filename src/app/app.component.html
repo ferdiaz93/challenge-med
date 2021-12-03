@@ -1,8 +1,10 @@
 <nav>
-  <ul>
-    <li><a routerLink="/contact" routerLinkActive="active">First Component</a></li>
-    <li><a routerLink="/weather" routerLinkActive="active">Second Component</a></li>
-    <li><a routerLink="/employee" routerLinkActive="active">thir Component</a></li>
-  </ul>
+  <mat-card>
+    <mat-card-actions>
+      <button routerLink="/employee" mat-button color="primary">Employee</button>
+      <button routerLink="/contact" mat-button color="primary">Contact</button>
+      <button routerLink="/weather"mat-button color="primary">Weather</button>
+    </mat-card-actions>
+  </mat-card>
 </nav>
 <router-outlet></router-outlet>

@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { WeatherPageComponent } from './components/weather-page/weather-page.component';
 import { EmployeePageComponent } from './components/employee-page/employee-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { EmployeePageComponent } from './components/employee-page/employee-page.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
