@@ -1,29 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { AfterViewInit, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
 
 @Component({
-  selector: 'app-employee-page',
-  templateUrl: './employee-page.component.html',
-  styleUrls: ['./employee-page.component.scss']
+  selector: 'app-employee-grid',
+  templateUrl: './employee-grid.component.html',
+  styleUrls: ['./employee-grid.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class EmployeePageComponent implements OnInit {
-
-  constructor() { }
-  todo = [
-    'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep'
-  ];
-
-  done = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
-  ];
+export class EmployeeGridComponent implements AfterViewInit, OnInit {
 
   columns = [
     { text: 'Id', datafield: 'id' },
@@ -55,17 +39,10 @@ export class EmployeePageComponent implements OnInit {
     ]
   });
 
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-    }
-  }
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
+  ngAfterViewInit() {
+
+  }
 }

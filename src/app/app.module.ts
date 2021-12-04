@@ -9,20 +9,26 @@ import { EmployeePageComponent } from './components/employee-page/employee-page.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { jqxGridModule } from 'jqwidgets-ng/jqxgrid';
+import { EmployeeGridComponent } from './employee-grid/employee-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactPageComponent,
     WeatherPageComponent,
-    EmployeePageComponent
+    EmployeePageComponent,
+    EmployeeGridComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    DragDropModule,
+    jqxGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
