@@ -1,0 +1,22 @@
+<section class="contact-section">
+  <mat-card class="contact-card">
+    <mat-card-title>Contacto</mat-card-title>
+    <form class="contact-form" (ngSubmit)="onClickSubmit()">
+      <mat-form-field class="input-label" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Ej. Fernando" [(ngModel)]="name" value="" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-form-field class="input-label" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Ej. fernando@gmail.com" [(ngModel)]="email" value="" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-form-field class="input-label" appearance="fill">
+        <mat-label>Consulta</mat-label>
+        <textarea matInput placeholder="Ex. Testing..." [(ngModel)]="consult" [ngModelOptions]="{standalone: true}"></textarea>
+      </mat-form-field>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [disabled]="invalidForm()">ENVIAR</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>

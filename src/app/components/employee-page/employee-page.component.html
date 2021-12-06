@@ -1,0 +1,95 @@
+<section class="employee-page">
+    <article class="employee-tables">
+        <div>
+            <h2>Empleados</h2>
+            <table mat-table [dataSource]="dataSource" 
+                class="mat-elevation-z8 demo-table" 
+                cdkDropList 
+                #EmployeeList="cdkDropList" 
+                [cdkDropListData]="dataSource" 
+                [cdkDropListConnectedTo]="[SelectedEmployeeList]"
+                (cdkDropListDropped)="drop($event)">
+                <!-- Legajo Column -->
+                <ng-container matColumnDef="legajo">
+                    <th mat-header-cell *matHeaderCellDef>No.</th>
+                    <td mat-cell *matCellDef="let element">{{element.legajo}}</td>
+                </ng-container>
+    
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                </ng-container>
+    
+                <!-- Lastname Column -->
+                <ng-container matColumnDef="lastName">
+                    <th mat-header-cell *matHeaderCellDef>Apellido</th>
+                    <td mat-cell *matCellDef="let element">{{element.lastName}}</td>
+                </ng-container>
+    
+                <!-- DNI Column -->
+                <ng-container matColumnDef="dni">
+                    <th mat-header-cell *matHeaderCellDef>DNI</th>
+                    <td mat-cell *matCellDef="let element">{{element.dni}}</td>
+                </ng-container>
+    
+                <!-- Phone Column -->
+                <ng-container matColumnDef="phone">
+                    <th mat-header-cell *matHeaderCellDef>Telefono</th>
+                    <td mat-cell *matCellDef="let element">{{element.dni}}</td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag></tr>
+            </table>
+        </div>
+        <div>
+            <h2>Seleccionados</h2>
+            <table mat-table [dataSource]="selectedEmployee" 
+                class="mat-elevation-z8 demo-table employee-table"
+                cdkDropList 
+                #SelectedEmployeeList="cdkDropList" 
+                [cdkDropListData]="selectedEmployee" 
+                [cdkDropListConnectedTo]="[EmployeeList]"
+                (cdkDropListDropped)="drop($event)">
+                <ng-container matColumnDef="legajo">
+                    <th mat-header-cell *matHeaderCellDef>No.</th>
+                    <td mat-cell *matCellDef="let element">{{element.legajo}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="lastName">
+                    <th mat-header-cell *matHeaderCellDef>Apellido</th>
+                    <td mat-cell *matCellDef="let element">{{element.lastName}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="dni">
+                    <th mat-header-cell *matHeaderCellDef>DNI</th>
+                    <td mat-cell *matCellDef="let element">{{element.dni}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="phone">
+                    <th mat-header-cell *matHeaderCellDef>Telefono</th>
+                    <td mat-cell *matCellDef="let element">{{element.dni}}</td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag></tr>
+            </table>
+        </div>
+    </article>
+    <article>
+        <button mat-raised-button color="primary" (click)="openDialog()">Mostrar Seleccionados</button>
+    </article>
+    <article>
+        <jqxGrid [source]="source" [theme]="'material'" [autoheight]="true" [altrows]="true" [filterable]="true"
+            [sortable]="true" [columns]="columns" [pageable]="false" #grid>
+        </jqxGrid>
+    </article>
+
+    <!-- <app-employee-grid></app-employee-grid> -->
+</section>
