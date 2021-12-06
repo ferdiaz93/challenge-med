@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { WeatherPageComponent } from './components/weather-page/weather-page.component';
 import { EmployeePageComponent } from './components/employee-page/employee-page.component';
+import { DialogEmployeeSelectedDialog } from './components/employee-page/employee-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,6 +16,8 @@ import { EmployeeGridComponent } from './employee-grid/employee-grid.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -23,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     ContactPageComponent,
     WeatherPageComponent,
     EmployeePageComponent,
-    EmployeeGridComponent
+    EmployeeGridComponent,
+    DialogEmployeeSelectedDialog
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

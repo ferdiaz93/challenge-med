@@ -45,4 +45,13 @@ export class EmployeeGridComponent implements AfterViewInit, OnInit {
   ngAfterViewInit() {
 
   }
+
+  cellsrenderer(row:any, columnfield:any, value:any, defaulthtml:any, columnproperties:any) {
+    if (value < 20) {
+      return '<span style="margin: 4px; float: ' + columnproperties.cellsalign + '; color: #0000ff;">' + value + '</span>';
+    }
+    else {
+      return '<span style="margin: 4px; float: ' + columnproperties.cellsalign + '; color: #008000;">' + value + '</span>';
+    }
+  }
 }

@@ -1,3 +1,30 @@
+.employee-page{
+    padding: 30px 100px;
+    @media(max-width:768px){
+        padding: 30px 30px;
+    }
+    article{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+        &.employee-tables{
+            column-gap: 20px;
+            flex-wrap: wrap;
+            div{
+                width: 100%;
+                max-width: 430px;
+                table{
+                    width: 100%;
+                }
+                h2{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
 .example-container {
     width: 400px;
     max-width: 100%;
@@ -44,4 +71,8 @@
 }
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.test{
+    color:red;
 }

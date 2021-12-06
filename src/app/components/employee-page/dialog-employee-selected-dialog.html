@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Empleados seleccionados</h1>
+<div mat-dialog-content>
+    <ul>
+        <li *ngFor="let itemEmployee of data; let i=index">
+            <span>{{itemEmployee.name}}</span>
+        </li>
+    </ul>
+</div>
