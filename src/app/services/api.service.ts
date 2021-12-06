@@ -9,7 +9,11 @@ export class ApiService {
 
   constructor(private httpClient:HttpClient) { }
   
-  post(params:any){
+  sendContactInfo(params:any){
     return this.httpClient.post<any>("/test", params).pipe(map(data => data));
+  }
+
+  getWeatherInfo(url:string){
+    return this.httpClient.get<any>(url).pipe(map(data => data))
   }
 }

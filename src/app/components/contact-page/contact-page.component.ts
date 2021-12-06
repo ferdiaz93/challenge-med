@@ -17,19 +17,15 @@ export class ContactPageComponent implements OnInit {
   }
 
   onClickSubmit(){
-    console.log(this.name)
-    console.log(this.email)
-    console.log(this.consult)
     let data = {
       name: this.name,
       email: this.email,
       consult: this.consult
     }
-    this.apiService.post(data).subscribe(data => {
+    this.apiService.sendContactInfo(data).subscribe(data => {
       console.log(data, "test")
     }, err => {
       document.location.href = `mailto:${data.email}?body=${data.consult}`
-      console.log(err, "test")
     })
   }
 
