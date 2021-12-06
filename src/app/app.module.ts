@@ -12,6 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { jqxGridModule } from 'jqwidgets-ng/jqxgrid';
 import { EmployeeGridComponent } from './employee-grid/employee-grid.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { EmployeeGridComponent } from './employee-grid/employee-grid.component';
     MatCardModule,
     MatButtonModule,
     DragDropModule,
-    jqxGridModule
+    jqxGridModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
